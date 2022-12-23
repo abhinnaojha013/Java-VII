@@ -79,12 +79,30 @@ public class Main
                 else
                 {
                     account.amount += amt;
+                    System.out.println( x + " account created");
                     infiniteFlag = false;
                 }
             }
         }
 
-        account.deposit();
+        Scanner scanner = new Scanner(System.in);
+        infiniteFlag = true;
+        while (infiniteFlag)
+        {
+            System.out.println("Enter the choice");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("0. Exit");
+            System.out.println("Choice: ");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice)
+            {
+                case 1-> account.deposit();
+                case 2-> account.withdraw();
+                case 0-> infiniteFlag = false;
+                default -> System.out.println("Invalid choice");
+            }
+        }
 
         System.out.print(account.name + "   " + account.amount);
     }
