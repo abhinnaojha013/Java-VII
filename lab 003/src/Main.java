@@ -105,8 +105,6 @@ public class Main
                 default -> System.out.println("Invalid choice");
             }
         }
-
-        System.out.print(account.name + "   " + account.amount);
     }
 }
 
@@ -168,12 +166,13 @@ final class SBAccount extends Account
             Scanner scanner = new Scanner(System.in);
             double amt = Double.parseDouble(scanner.nextLine());
 //            minimumBalance is 10000, and thus the minimum amount of withdrawal is amount - minimumBalance
-            if (amt < (amount - minimumBalance))
+            if (amt > (amount - getMinimumBalance()))
             {
                 System.out.println("Withdraw unsuccessful, insufficient balance");
             }
             else
             {
+                amount -= amt;
                 System.out.println("Withdraw successful, your new balance is " + amount);
             }
         }
@@ -240,12 +239,13 @@ final class CurrentAccount extends Account
             else
             {
 //                minimumBalance is 7000, and thus the minimum amount of withdrawal is amount - minimumBalance
-                if (amt < (amount - minimumBalance))
+                if (amt > (amount - getMinimumBalance()))
                 {
                     System.out.println("Withdraw unsuccessful, insufficient balance");
                 }
                 else
                 {
+                    amount -= amt;
                     System.out.println("Withdraw successful, your new balance is " + amount);
                 }
             }
