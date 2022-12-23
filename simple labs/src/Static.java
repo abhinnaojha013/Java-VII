@@ -17,4 +17,4 @@ public class Static
         System.out.println("The value is: " + Static.x);
         Static.function();
     }
-}
+}   
