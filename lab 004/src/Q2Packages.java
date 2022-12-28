@@ -1,3 +1,16 @@
+/*
+    Title:
+        Packages
+
+    Description:
+        Write a program to define functions for subtract, multiply, divide, factorial and
+        reversing the digits of a number in a package, import this class in another package
+        and use all the methods defined in the primary package.
+
+    Date modified; Author(s); Modification details
+        2022-12-28; abhinna; Created the program
+*/
+
 // importing the package to use
 import com.Lab004.ArithmeticOperations.*;
 
