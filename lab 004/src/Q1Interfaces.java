@@ -90,8 +90,10 @@ class Queue implements IQueue {
 public class Q1Interfaces {
     public static void main(String[] args) {
 //         creating array of queue values for easier manipulation
-        int[] queueArray = {1, 2, 3, 4, 5};
-        QueueValue[] queueValue = new QueueValue[queueArray.length];
+//         making array of large size to avoid dynamic sizing for now
+        QueueValue[] queueValue = new QueueValue[100];
+
+//         initiating a counter to point to array position, updates on insert only
         int x = 0;
 
 //         creating the queue
@@ -142,5 +144,5 @@ public class Q1Interfaces {
                 System.out.println("Invalid choice.");
             } // catch (Exception exception)
         } // while (infiniteFlag)
-    }
-}
+    } // public static void main(String[] args)
+} // public class Q1Interfaces
