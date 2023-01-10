@@ -21,13 +21,13 @@ public class LoginAWT extends Frame implements ActionListener
         setVisible(true);
         setResizable(false);
         setLocation(400, 300);
-        setTitle("Login Page");
+        setTitle("com.GUI.Swing.Login Page");
 
         labelUser = new Label("Username");
         labelPassword = new Label("Password");
         textFieldUser = new TextField();
         textFieldPassword = new TextField();
-        buttonLogin = new Button("Login");
+        buttonLogin = new Button("com.GUI.Swing.Login");
         buttonReset = new Button("Reset");
 
         add(labelUser);
