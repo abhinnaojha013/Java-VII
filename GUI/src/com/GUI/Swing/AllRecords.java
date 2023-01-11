@@ -30,11 +30,12 @@ public class AllRecords extends JFrame{
             ResultSet resultSet = statement.executeQuery("SELECT * FROM student_table");
 
             while (resultSet.next()) {
-                tableModel.addRow(new Object[] {resultSet.getString(1),
-                                                resultSet.getString(2),
-                                                resultSet.getString(3),
-                                                resultSet.getString(4),
-                                                resultSet.getString(5),
+                tableModel.addRow(new Object[] {
+                        resultSet.getString(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5),
                 });
             }
         }

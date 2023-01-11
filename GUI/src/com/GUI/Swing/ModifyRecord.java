@@ -147,7 +147,7 @@ public class ModifyRecord extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        new ModifyRecord();
-    }
+//    public static void main(String[] args) {
+//        new ModifyRecord();
+//    }
 }

@@ -41,11 +41,13 @@ public class MainForm extends JFrame implements ActionListener
             menuRecord.add(menuItemAdd);
                 menuItemAdd.addActionListener(this);
             menuRecord.add(menuItemEdit);
+                menuItemEdit.addActionListener(this);
             menuRecord.add(menuItemExit);
         menuBar.add(menuReport);
             menuReport.add(menuItemAll);
                 menuItemAll.addActionListener(this);
             menuReport.add(menuItemIndividual);
+                menuItemIndividual.addActionListener(this);
         menuBar.add(menuHelp);
             menuHelp.add(menuItemAbout);
     }
@@ -53,13 +55,17 @@ public class MainForm extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent actionEvent)
     {
-        if (actionEvent.getSource() == menuItemAdd)
-        {
+        if (actionEvent.getSource() == menuItemAdd) {
             new AddRecords();
         }
-        if (actionEvent.getSource() == menuItemAll)
-        {
+        if (actionEvent.getSource() == menuItemEdit) {
+            new ModifyRecord();
+        }
+        if (actionEvent.getSource() == menuItemAll) {
             new AllRecords();
+        }
+        if (actionEvent.getSource() == menuItemIndividual) {
+            new SearchAndView();
         }
     }
 }
