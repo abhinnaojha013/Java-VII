@@ -84,17 +84,19 @@ public class SearchAndView extends JFrame implements ActionListener {
                 resultSet = preparedStatement.executeQuery();
 
                 if (resultSet.next()) {
+//                    or use do while instead of resultSet.previous()
                     resultSet.previous();
                     tableModel = new DefaultTableModel();
                     table = new JTable(tableModel);
-                        tableModel.addColumn("Roll");
-                        tableModel.addColumn("Name");
-                        tableModel.addColumn("Level");
-                        tableModel.addColumn("Faculty");
-                        tableModel.addColumn("Semester");
+                    tableModel.addColumn("Roll");
+                    tableModel.addColumn("Name");
+                    tableModel.addColumn("Level");
+                    tableModel.addColumn("Faculty");
+                    tableModel.addColumn("Semester");
 
+                    //do {
                     while (resultSet.next()) {
-                        tableModel.addRow(new Object[] {
+                        tableModel.addRow(new Object[]{
                                 resultSet.getString(1),
                                 resultSet.getString(2),
                                 resultSet.getString(3),
@@ -102,7 +104,7 @@ public class SearchAndView extends JFrame implements ActionListener {
                                 resultSet.getString(5),
                         });
                     }
-
+//                    } while (resultSet.next());
                     int vertical_scroll = ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
                     int horizontal_scroll = ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
 
