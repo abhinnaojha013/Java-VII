@@ -15,6 +15,13 @@
         </sourceRoots>
       </configuration>
     </facet>
+    <facet type="javaeeApplication" name="javaEEApplication">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="application.xml" url="file://$MODULE_DIR$/META-INF/application.xml" />
+        </descriptors>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -35,5 +42,14 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
+    <orderEntry type="library" name="javax.resource-api-1.7.1" level="project" />
+    <orderEntry type="library" name="JavaeeSecurity-1.0" level="project" />
+    <orderEntry type="library" name="javax.json.processing-1.1.4" level="project" />
+    <orderEntry type="library" name="javax.transaction-api-1.3" level="project" />
+    <orderEntry type="library" name="ConcurrencyUtilities-1.1" level="project" />
+    <orderEntry type="library" name="javax.jms-api.jar-2.0.1" level="project" />
+    <orderEntry type="library" name="Validation API-2.0.1.Final" level="project" />
+    <orderEntry type="library" name="WebSocket-1.1" level="project" />
+    <orderEntry type="library" name="JAX-RS-2.1.1" level="project" />
   </component>
 </module>
