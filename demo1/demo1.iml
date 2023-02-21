@@ -51,5 +51,6 @@
     <orderEntry type="library" name="Validation API-2.0.1.Final" level="project" />
     <orderEntry type="library" name="WebSocket-1.1" level="project" />
     <orderEntry type="library" name="JAX-RS-2.1.1" level="project" />
+    <orderEntry type="library" name="mysql-connector" level="project" />
   </component>
 </module>

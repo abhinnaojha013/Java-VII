@@ -1,5 +1,9 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Objects" %><%--
+<%@ page import="java.util.Objects" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %><%--
   Created by IntelliJ IDEA.
   User: Dell
   Date: 2023-01-25
@@ -20,14 +24,28 @@
           session.setAttribute("username", un);
           session.setAttribute("password", pw);
 
-          if (un.equalsIgnoreCase("abhinna") && pw.equals("abhinna659")) {
-              response.sendRedirect("home.jsp");
+          Class.forName("com.mysql.jdbc.Driver");
+          Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_student_db", "root", "");
+
+          Statement statement = connection.createStatement();
+          ResultSet resultSet = statement.executeQuery("SELECT * FROM user_pass");
+
+          boolean flag = false;
+          while (resultSet.next()) {
+              if (un.equalsIgnoreCase(resultSet.getString(2)) && pw.equals(resultSet.getString(3))) {
+                 out.println("Valid user");
+                 flag = true;
+                 break;
+              }
           }
-          else {
-              response.sendRedirect("login.jsp");
+          if (!flag) {
+              out.println("Invalid User: " + un + "<br>");
+              out.println("Invalid password: " + pw + "<br>");
+              out.println("<a href = 'login.jsp'>back to login</a>");
           }
+
       } catch (Exception exception) {
-          response.sendRedirect("login.jsp");
+          out.println(exception);
       }
 
   %>
