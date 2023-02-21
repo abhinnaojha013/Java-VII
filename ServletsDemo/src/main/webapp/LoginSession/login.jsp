@@ -12,8 +12,7 @@
     </head>
     <body>
         <div>
-<%--            <form action="loginConfirm.jsp" method="post">--%>
-                <form action="/ServletsDemo_war_exploded/Servlet" method="post">
+                <form action="/ServletsDemo_war_exploded/LoginServlet" method="post">
                 Username:
                 <input type="text" name="username"><br>
                 Password:
